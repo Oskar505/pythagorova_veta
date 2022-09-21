@@ -1,0 +1,107 @@
+#@title
+ 
+#<------------------- zde spusíte
+ 
+from math import sin, cos, tan, sqrt, pi
+ 
+print('kalkulačka vám dopočítá stranu kde zadáte nulu')
+print('a je odvěsna 1, b je odvěsna 2, c je přepona')
+ 
+oddelovac = 40 * '='
+ 
+print(oddelovac)
+a = float(input('zadejte odvěsnu a: '))
+b = float(input('zadejte odvěsnu b: '))
+  
+if a != 0 and b != 0:
+  print('zadejte přeponu c: 0')
+  c = 0
+
+else:
+  c = float(input('zadejte přeponu c: '))
+ 
+if a == 0:   #zapne se pokud chci pocitat 1. odvesnu
+  
+  if b > c:     #pokud je b vetsi nez c    aby program neodecital vetsi od mensiho
+    oddelovac = 40 * '='
+ 
+    mocnina_a = b*b
+    mocnina_b = c*c
+ 
+    soucet = mocnina_a - mocnina_b
+    vysledek = sqrt(soucet)
+    zaokrouhleny_vysledek = round(vysledek, 2)
+ 
+    print(oddelovac)
+    print('vypocet: b2 - c2','/', b, '-', c, '/', mocnina_a,'-',mocnina_b, '/', '(odmocnina)',soucet, '/', zaokrouhleny_vysledek)
+    print("odvěsna a je", zaokrouhleny_vysledek)
+    print(oddelovac) 
+ 
+  elif b < c:     #pokud je b mensi nez c
+    oddelovac = 40 * '='
+ 
+    mocnina_a = c*c
+    mocnina_b = b*b
+ 
+    soucet = mocnina_a - mocnina_b
+    vysledek = sqrt(soucet)
+    zaokrouhleny_vysledek = round(vysledek, 2)
+ 
+    print(oddelovac)
+    print('vypocet: c2 - b2','/', c, '-', b, '/', mocnina_a,'-',mocnina_b, '/', '(odmocnina)',soucet, '/', zaokrouhleny_vysledek)
+    print("odvěsna a je", zaokrouhleny_vysledek)
+    print(oddelovac) 
+ 
+elif b == 0:     #pokud chci pocitat 2. odvesnu
+  
+  if a > c:                  #pokud je a vetsi nez c
+    oddelovac = 40 * '='
+ 
+    mocnina_a = a*a
+    mocnina_b = c*c
+ 
+    soucet = mocnina_a - mocnina_b
+    vysledek = sqrt(soucet)
+    zaokrouhleny_vysledek = round(vysledek, 2)
+ 
+    print(oddelovac)
+    print('vypocet: a2 - c2','/', a, '-', c, '/', mocnina_a,'-',mocnina_b, '/', '(odmocnina)',soucet, '/', zaokrouhleny_vysledek)
+    print("odvěsna b je", zaokrouhleny_vysledek)
+    print(oddelovac) 
+  
+  elif a < c:                 #pokud je a mensi nez c
+    oddelovac = 40 * '='
+ 
+    mocnina_a = c*c
+    mocnina_b = a*a
+ 
+    soucet = mocnina_a - mocnina_b
+    vysledek = sqrt(soucet)
+    zaokrouhleny_vysledek = round(vysledek, 2)
+ 
+    print(oddelovac)
+    print('vypocet: c2 - a2','/', c, '-', a, '/', mocnina_a,'-',mocnina_b, '/', '(odmocnina)',soucet, '/', zaokrouhleny_vysledek)
+    print("odvěsna b je", zaokrouhleny_vysledek)
+    print(oddelovac) 
+ 
+elif c == 0:     #pokud chci pocitat preponu
+ 
+  oddelovac = 40 * '='
+ 
+  mocnina_a = a*a
+  mocnina_b = b*b
+ 
+  soucet = mocnina_a + mocnina_b
+  vysledek = sqrt(soucet)
+ 
+  zaokrouhleny_vysledek = round(vysledek,2)
+  zaokrouhlena_mocnina_a = round(mocnina_a, 2)
+  zaokrouhlena_mocnina_b = round(mocnina_b, 2)
+ 
+  print(oddelovac)
+  print('vypocet: a2 + b2','/', a, '+', b, '/', zaokrouhlena_mocnina_a,'+',zaokrouhlena_mocnina_b, '/', '(odmocnina)',soucet, '/', zaokrouhleny_vysledek)
+  print("přepona c je", zaokrouhleny_vysledek)
+  print(oddelovac)
+ 
+else:
+  print('chyba!')
